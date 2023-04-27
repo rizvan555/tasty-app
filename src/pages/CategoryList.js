@@ -1,7 +1,7 @@
 const CategoryList = () => {
   return (
     <div>
-      <h1>CategoryList</h1>
+      <h2>CategoryList</h2>
     </div>
   );
 };
