@@ -1,7 +1,12 @@
+import ProductList from "./ProductList";
+import Search from "../components/Search";
+
 const CategoryList = () => {
   return (
     <div>
-      <h2>CategoryList</h2>
+      <h1>CategoryList</h1>
+      <Search />
+
     </div>
   );
 };

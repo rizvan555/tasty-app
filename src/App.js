@@ -4,6 +4,8 @@ import CategoryList from "./pages/CategoryList";
 import Random from "./components/Random";
 import ProductDetails from "./pages/ProductDetails";
 import ProductItems from "./pages/ProductItems";
+import ProductList from "./pages/ProductList";
+
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
         <Route path="/" element={<CategoryList />} />
         <Route path="/random" element={<Random />} />
         <Route path="/productItems" element={<ProductItems />} />
-        <Route path="/productItems/:id" element={<ProductDetails />} />
+        <Route path="/productList" element={<ProductList />} />
+        <Route path="/productList/:id" element={<ProductDetails />} />
+
       </Routes>
     </div>
   );
