@@ -6,6 +6,7 @@ const CategoryList = () => {
     <div>
       <h1>CategoryList</h1>
       <Search />
+
     </div>
   );
 };

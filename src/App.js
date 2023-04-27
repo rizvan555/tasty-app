@@ -6,6 +6,7 @@ import ProductDetails from "./pages/ProductDetails";
 import ProductItems from "./pages/ProductItems";
 import ProductList from "./pages/ProductList";
 
+
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
         <Route path="/productItems" element={<ProductItems />} />
         <Route path="/productList" element={<ProductList />} />
         <Route path="/productList/:id" element={<ProductDetails />} />
+
       </Routes>
     </div>
   );
