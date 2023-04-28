@@ -4,6 +4,8 @@ import CategoryList from "./pages/CategoryList";
 import Random from "./components/Random";
 import ProductDetails from "./pages/ProductDetails";
 import ProductItems from "./pages/ProductItems";
+import CategoryResults from "./pages/CategoryResults";
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
         <Route path="/productItems" element={<ProductItems />} />
         <Route path="/productItems/:id" element={<ProductDetails />} />
       </Routes>
+   <CategoryResults/>
     </div>
   );
 }
