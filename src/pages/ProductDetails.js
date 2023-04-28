@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import "../css/productDetails.css";
 import Search from "../components/Search";
 
-
-
 const ProductDetails = () => {
 
   const [details, setDetails] = useState([]);

@@ -4,14 +4,12 @@ import { GiKnifeFork } from "react-icons/gi";
 import Logo from "../resource/Nav.png";
 import { Link } from "react-router-dom";
 import '../css/search.css';
-
-
+import { Link } from "react-router-dom";
 
 const Search = () => {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);
-
 
   useEffect(() => {
     fetch("https://www.themealdb.com/api/json/v1/1/search.php?s")
@@ -34,16 +32,17 @@ const Search = () => {
     }
   }, [search, products]);
 
-  const handleReloadPage = () => {
-    window.location.reload();
-  };
-
   return (
     <div className="search_firstParentContainer">
       <Link to='/'><img src={Logo }alt={Logo} className="logo"/></Link>
       <section className="big-container">
       <h1 className="headline-searchbar">Find a recipe, an idea, an inspiration...</h1>
     <div className="search-container"> 
+    <div>
+      <section className="search-container">
+        <Link to="/">
+          <GiKnifeFork />
+        </Link>
         <input
           type="text"
           placeholder="Type something to search"
