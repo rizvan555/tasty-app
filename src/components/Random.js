@@ -15,7 +15,7 @@ const Random = () => {
     <div>
       {meal ? (
         <div>
-          <h2>Your random menu</h2>
+          <h1>Your random menu</h1>
           <h3>{meal.strMeal}</h3>
           <p>{meal.strArea} Dish</p>
           <img src={meal.strMealThumb} alt={meal.strMeal} />
