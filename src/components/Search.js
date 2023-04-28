@@ -39,7 +39,7 @@ const Search = () => {
   };
 
   return (
-    <div>
+    <div className="search_firstParentContainer">
       <Link to='/'><img src={Logo }alt={Logo} className="logo"/></Link>
       <section className="big-container">
       <h1 className="headline-searchbar">Find a recipe, an idea, an inspiration...</h1>

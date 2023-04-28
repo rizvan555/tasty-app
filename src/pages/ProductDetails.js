@@ -1,6 +1,7 @@
 import { useEffect , useState } from "react";
 import { Link } from "react-router-dom";
 import "../css/productDetails.css";
+import Search from "../components/Search";
 
 
 
@@ -50,6 +51,8 @@ const ProductDetails = () => {
 
 
   return (
+    <div>
+      <Search />
     <div className="product-details">
       {details && details.length > 0 && <img src={meal.strMealThumb} alt="img" className="product-detailsImg"/>}
       <div className="details-flex">
@@ -64,6 +67,7 @@ const ProductDetails = () => {
       <Link to={meal.strYoutube} className="productDetails-link">Watch on YouTube</Link>
       </div>
       </div>
+    </div>
     </div>
   );
 };
