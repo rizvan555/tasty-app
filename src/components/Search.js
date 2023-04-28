@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import ProductItem from "../pages/ProductItems";
+import ProductItems from "../pages/ProductItems";
+import { GiKnifeFork } from "react-icons/gi";
 
 const Search = () => {
   const [search, setSearch] = useState("");
-  const [products, setProducts] = useState(null);
-  const [filtered, setFiltered] = useState(null);
-  const navigator = useNavigate();
+  const [products, setProducts] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+
 
   useEffect(() => {
     fetch("https://www.themealdb.com/api/json/v1/1/search.php?s")
@@ -14,35 +14,44 @@ const Search = () => {
       .then((data) => setProducts(data.meals));
   }, []);
 
-  const handleSearchFilter = () => {
+  useEffect(() => {
     if (products) {
-      const myProduct = products.filter((product) => product.idMeal === search);
-      navigator(`search/${myProduct.idMeal}`);
+      const filteredProducts = products.filter((product) => {
+        return (
+          product.strMeal.toLowerCase().includes(search.toLowerCase()) ||
+          product.strArea.toLowerCase().includes(search.toLowerCase()) ||
+          (product.strTags &&
+            product.strTags.toLowerCase().includes(search.toLowerCase())) ||
+          product.strCategory.toLowerCase().includes(search.toLowerCase())
+        );
+      });
+      setFiltered(filteredProducts);
     }
-  };
-  const handleEnterButton = (event) => {
-    if (event && event.key === "Enter") {
-      handleSearchFilter();
-    }
+  }, [search, products]);
+
+  const handleReloadPage = () => {
+    window.location.reload();
   };
 
   return (
     <div>
-      <section>
+      <section className="search-container">
+        <button onClick={handleReloadPage}>
+          <GiKnifeFork />
+        </button>
         <input
           type="text"
-          placeholder="Type your food"
+          placeholder="Type something to search"
           onChange={(event) => setSearch(event.target.value)}
           value={search}
-          onKeyPress={handleEnterButton}
         />
-        <button onClick={handleSearchFilter}>Search</button>
       </section>
-      <section>
-        {filtered &&
+
+      <section className="result-container">
+        {search &&
           filtered.map((product) => {
             return (
-              <ProductItem
+              <ProductItems
                 key={product.idMeal}
                 idMeal={product.idMeal}
                 strMeal={product.strMeal}
@@ -54,5 +63,4 @@ const Search = () => {
     </div>
   );
 };
-
 export default Search;
