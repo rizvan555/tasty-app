@@ -26,6 +26,7 @@ function CategoryList() {
           </div>
         );
       })}
+
     </div>
   );
 }
