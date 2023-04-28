@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ProductItems from "../pages/ProductItems";
-// import { GiKnifeFork } from "react-icons/gi";
 import { IoIosCloseCircleOutline } from "react-icons/io";
+import { GiKnifeFork } from "react-icons/gi";
 import Logo from "../resource/Nav.png";
 import { Link } from "react-router-dom";
 import "../css/search.css";
@@ -61,7 +61,7 @@ const Search = () => {
           {/* <Link to="/">
             <GiKnifeFork />
           </Link> */}
-
+              
           <section className="result-container">
             {search &&
               filtered.map((product) => {

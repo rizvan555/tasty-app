@@ -1,5 +1,7 @@
 import { useEffect , useState } from "react";
 import { Link } from "react-router-dom";
+import "../css/productDetails.css";
+import Search from "../components/Search";
 
 const ProductDetails = () => {
 
@@ -32,13 +34,13 @@ const ProductDetails = () => {
 
   const meal = details[0];
   const instructions = meal.strInstructions.split("\r\n").map((instruction, index) => {
-    return <li key={index}>{instruction}</li>;
+    return <li key={index} className="instruction-points">{instruction}</li>;
   });
   const ingredients = [];
   for (let i = 1; i <= 20; i++) {
     if (meal[`strIngredient${i}`]) {
       ingredients.push(
-        <p key={i}>
+        <p key={i} className="ingredient-points">
           {meal[`strIngredient${i}`]} - {meal[`strMeasure${i}`]}
         </p>
       );
@@ -47,14 +49,23 @@ const ProductDetails = () => {
 
 
   return (
+    <div>
+      <Search />
     <div className="product-details">
-      {details && details.length > 0 && <img src={meal.strMealThumb} alt="img" />}
-      <h1>{meal.strMeal}</h1>
-      <h2>Instructions</h2>
-      <ul>{instructions}</ul>
-      <h2>Ingredients</h2>
-      <div>{ingredients}</div>
-      <Link to={meal.strYoutube}>Watch on YouTube</Link>
+      {details && details.length > 0 && <img src={meal.strMealThumb} alt="img" className="product-detailsImg"/>}
+      <div className="details-flex">
+      <div className="instructions">
+      <h1 className="product-details-headline">{meal.strMeal}</h1>
+      
+      <ul className="instruction-block">{instructions}</ul>
+      </div>
+      <div>
+      <h2 className="product-details-headline">Ingredients</h2>
+      <div className="productDetails-ingredient-block">{ingredients}</div>
+      <Link to={meal.strYoutube} className="productDetails-link">Watch on YouTube</Link>
+      </div>
+      </div>
+    </div>
     </div>
   );
 };
