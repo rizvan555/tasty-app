@@ -7,7 +7,6 @@ import ProductItems from "./pages/ProductItems";
 import ProductList from "./pages/ProductList";
 import CategoryResults from "./pages/CategoryResults";
 
-
 function App() {
   return (
     <div className="App">
