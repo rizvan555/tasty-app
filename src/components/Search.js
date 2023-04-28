@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import ProductItems from "../pages/ProductItems";
 import { GiKnifeFork } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 const Search = () => {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);
-
 
   useEffect(() => {
     fetch("https://www.themealdb.com/api/json/v1/1/search.php?s")
@@ -29,16 +29,12 @@ const Search = () => {
     }
   }, [search, products]);
 
-  const handleReloadPage = () => {
-    window.location.reload();
-  };
-
   return (
     <div>
       <section className="search-container">
-        <button onClick={handleReloadPage}>
+        <Link to="/">
           <GiKnifeFork />
-        </button>
+        </Link>
         <input
           type="text"
           placeholder="Type something to search"
