@@ -1,4 +1,7 @@
 
+import Search from "../components/Search";
+
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -32,6 +35,8 @@ function CategoryList() {
         );
       })}
 
+      
+      <Search />
     </div>
   );
 }
