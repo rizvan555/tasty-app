@@ -1,4 +1,3 @@
-import ProductItems from "./ProductItems";
 
 const ProductDetails = () => {
   return (
