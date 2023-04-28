@@ -5,6 +5,7 @@ import CategoryList from "./pages/CategoryList";
 import ProductDetails from "./pages/ProductDetails";
 import ProductItems from "./pages/ProductItems";
 import ProductList from "./pages/ProductList";
+import Search from "./components/Search";
 
 function App() {
   return (

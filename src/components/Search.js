@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import ProductItems from "../pages/ProductItems";
 import { GiKnifeFork } from "react-icons/gi";
+import Logo from "../resource/Nav.png";
+import { Link } from "react-router-dom";
+import '../css/search.css';
 import { Link } from "react-router-dom";
 
 const Search = () => {
@@ -30,6 +33,11 @@ const Search = () => {
   }, [search, products]);
 
   return (
+    <div className="search_firstParentContainer">
+      <Link to='/'><img src={Logo }alt={Logo} className="logo"/></Link>
+      <section className="big-container">
+      <h1 className="headline-searchbar">Find a recipe, an idea, an inspiration...</h1>
+    <div className="search-container"> 
     <div>
       <section className="search-container">
         <Link to="/">
@@ -41,6 +49,10 @@ const Search = () => {
           onChange={(event) => setSearch(event.target.value)}
           value={search}
         />
+        <button onClick={handleReloadPage}>
+          <GiKnifeFork />
+        </button>
+        </div>
       </section>
 
       <section className="result-container">
