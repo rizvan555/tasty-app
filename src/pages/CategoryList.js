@@ -1,37 +1,31 @@
-
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import Search from "../components/Search";
 
 function CategoryList() {
   const [categories, setCategories] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
       .then((response) => response.json())
-      .then((json) => {
-        setCategories(json.categories);
+      .then((data) => {
+        setCategories(data.categories);
       });
   }, []);
 
-  function handleCategorySelect(category) {
-    categories.push(`/CategoryResults?category=${category}`);
-  }
-
   return (
-    <div>
-      {categories.map((category, i) => {
+    <div className="categoryListContainer">
+      <Search />
+      {categories.map((category) => {
         return (
-          <div key={i}>
-            <button onClick={() => handleCategorySelect(category.strCategory)}>
-              <img src={category.strCategoryThumb} alt={category.strCategory} />
+          <div key={category.idCategory} className="categoryList">
+            <Link to={`/categoryList/${category.strCategory}`}>
               <h2>{category.strCategory}</h2>
-            </button>
+              <img src={category.strCategoryThumb} alt="category" />
+            </Link>
           </div>
         );
       })}
-
     </div>
   );
 }
