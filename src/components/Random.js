@@ -10,6 +10,7 @@ const Random = () => {
   }, []);
 
 
+  
   return (
     <div>
       {meal ? (
