@@ -5,6 +5,7 @@ import Random from "./components/Random";
 import ProductDetails from "./pages/ProductDetails";
 import ProductItems from "./pages/ProductItems";
 import ProductList from "./pages/ProductList";
+import Search from "./components/Search";
 
 function App() {
   return (
