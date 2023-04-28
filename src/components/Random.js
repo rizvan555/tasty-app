@@ -9,16 +9,16 @@ const Random = () => {
       .then((data) => setMeal(data.meals[0]));
   }, []);
 
+  console.log(meal);
 
-  
   return (
     <div>
       {meal ? (
         <div>
           <h1>Your random menu</h1>
           <h2>{meal.strMeal}</h2>
-          <p>{meal.strArea} Dish</p>
           <img src={meal.strMealThumb} alt={meal.strMeal} />
+          <h3>{meal.strArea} Dish</h3>
           <p>{meal.strInstructions}</p>
         </div>
       ) : (
