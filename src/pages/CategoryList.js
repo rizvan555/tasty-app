@@ -4,6 +4,7 @@ import Search from "../components/Search";
 
 function CategoryList() {
   const [categories, setCategories] = useState([]);
+  const [showCategories, setShowCategories] = useState(true);
 
   useEffect(() => {
     fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
@@ -12,6 +13,10 @@ function CategoryList() {
         setCategories(data.categories);
       });
   }, []);
+
+  const handleSearch = () => {
+    setShowCategories(false);
+  };
 
   return (
     <div className="categoryListContainer">
@@ -26,7 +31,6 @@ function CategoryList() {
           </div>
         );
       })}
-
     </div>
   );
 }
