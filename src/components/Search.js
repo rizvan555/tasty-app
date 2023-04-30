@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import ProductItems from "../pages/ProductItems";
-import { GiKnifeFork } from "react-icons/gi";
+import { IoIosCloseCircleOutline } from "react-icons/io";
 import Logo from "../resource/Nav.png";
 import { Link } from "react-router-dom";
 import "../css/search.css";
 
-const Search = () => {
+const Search = ({ setShowCategories, setShowResult, setShowDetails }) => {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);
@@ -29,7 +29,7 @@ const Search = () => {
       });
       setFiltered(filteredProducts);
     }
-  }, [search, products]);
+  }, [search, products, setShowCategories, setShowResult, setShowDetails]);
 
   const reloadPage = () => {
     window.location.reload();
@@ -45,15 +45,20 @@ const Search = () => {
           Find a recipe, an idea, an inspiration...
         </h1>
         <div className="search-container">
-          <section className="search-container">
+          <section className="search-box">
             <input
               type="text"
               placeholder="Type something to search"
-              onChange={(event) => setSearch(event.target.value)}
+              onChange={(event) => {
+                setSearch(event.target.value);
+                setShowCategories(false);
+                setShowResult(false);
+                setShowDetails(false);
+              }}
               value={search}
             />
             <button onClick={reloadPage}>
-              <GiKnifeFork />
+              <IoIosCloseCircleOutline className="close-icon" size={20} />
             </button>
           </section>
 

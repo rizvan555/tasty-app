@@ -15,9 +15,8 @@ function App() {
         <Route path="/random" element={<Random />} />
         <Route path="/productItems" element={<ProductItems />} />
         <Route path="/productList" element={<ProductList />} />
-        <Route path="/productList/:id" element={<ProductDetails />} />
-        <Route path="/categoryList" element={<CategoryList />} />
         <Route path="/categoryList/:idCategory" element={<CategoryResults />} />
+        <Route path="/categoryResults/:idMeal" element={<ProductDetails />} />
       </Routes>
     </div>
   );
