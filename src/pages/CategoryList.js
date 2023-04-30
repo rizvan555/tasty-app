@@ -16,13 +16,17 @@ function CategoryList() {
 
   return (
     <div>
-      <Search setShowCategories={setShowCategories} setShowResult={() => {}} />
+      <Search
+        setShowCategories={setShowCategories}
+        setShowResult={() => {}}
+        setShowDetails={() => {}}
+      />
       {showCategories && (
         <div className="categoryListContainer">
           {categories.map((category) => {
             return (
               <div key={category.idCategory} className="categoryList">
-                <Link to={`/categoryList/${category.strCategory}`} >
+                <Link to={`/categoryList/${category.strCategory}`}>
                   <h2>{category.strCategory}</h2>
                   <img src={category.strCategoryThumb} alt="category" />
                 </Link>

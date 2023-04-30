@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Search from "../components/Search";
 
 function CategoryResult() {
@@ -17,18 +17,25 @@ function CategoryResult() {
 
   return (
     <div>
-      <Search setShowResult={setShowResult} setShowCategories={() => {}} />
+      <Search
+        setShowResult={setShowResult}
+        setShowCategories={() => {}}
+        setShowDetails={() => {}}
+      />
+
       {showResult && (
         <div>
           {meals.map((meal) => {
             return (
               <div key={meal.idMeal}>
-                <p>{meal.strMeal}</p>
-                <img
-                  src={meal.strMealThumb}
-                  alt="image"
-                  style={{ width: "50px" }}
-                />
+                <Link to={`categoryResult/${meal.strMeal}`}>
+                  <p>{meal.strMeal}</p>
+                  <img
+                    src={meal.strMealThumb}
+                    alt="image"
+                    style={{ width: "50px" }}
+                  />
+                </Link>
               </div>
             );
           })}

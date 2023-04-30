@@ -5,7 +5,7 @@ import Logo from "../resource/Nav.png";
 import { Link } from "react-router-dom";
 import "../css/search.css";
 
-const Search = ({ setShowCategories, setShowResult }) => {
+const Search = ({ setShowCategories, setShowResult, setShowDetails }) => {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);
@@ -29,7 +29,7 @@ const Search = ({ setShowCategories, setShowResult }) => {
       });
       setFiltered(filteredProducts);
     }
-  }, [search, products, setShowCategories]);
+  }, [search, products, setShowCategories, setShowResult, setShowDetails]);
 
   const reloadPage = () => {
     window.location.reload();
@@ -53,6 +53,7 @@ const Search = ({ setShowCategories, setShowResult }) => {
                 setSearch(event.target.value);
                 setShowCategories(false);
                 setShowResult(false);
+                setShowDetails(false);
               }}
               value={search}
             />

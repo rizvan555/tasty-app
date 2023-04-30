@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 const ProductItems = (props) => {
+  const navigator = useNavigate();
+
   const handleItemClick = () => {
-    window.location.href = `/productList/${props.idMeal}`;
+    navigator(`productList/${props.strMeal}`);
   };
 
   return (
