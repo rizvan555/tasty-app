@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "../css/productDetails.css";
 import Search from "../components/Search";
 
@@ -8,12 +8,13 @@ const ProductDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showDetails, setShowDetails] = useState(true);
+  const { idMeal } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://www.themealdb.com/api/json/v1/1/search.php?s`
+          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
         );
         const json = await response.json();
         setDetails(json.meals);
@@ -24,7 +25,7 @@ const ProductDetails = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [idMeal]);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -64,7 +65,7 @@ const ProductDetails = () => {
       />
       {showDetails && (
         <div className="product-details">
-          {details && details.length > 0 && (
+          {details && details && (
             <img
               src={meal.strMealThumb}
               alt="img"

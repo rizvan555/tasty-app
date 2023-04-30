@@ -28,7 +28,7 @@ function CategoryResults() {
           {meals.map((meal) => {
             return (
               <div key={meal.idMeal}>
-                <Link to={`categoryResults/${meal.strMeal}`}>
+                <Link to={`/categoryResults/${meal.idMeal}`}>
                   <p>{meal.strMeal}</p>
                   <img
                     src={meal.strMealThumb}
