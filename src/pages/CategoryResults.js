@@ -5,6 +5,8 @@ import Search from "../components/Search";
 function CategoryResult() {
   const { idCategory } = useParams();
   const [meals, setMeals] = useState([]);
+  const [showResult, setShowResult] = useState(true);
+
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${idCategory}`)
       .then((response) => response.json())
@@ -15,19 +17,23 @@ function CategoryResult() {
 
   return (
     <div>
-      <Search />
-      {meals.map((meal) => {
-        return (
-          <div key={meal.idMeal}>
-            <p>{meal.strMeal}</p>
-            <img
-              src={meal.strMealThumb}
-              alt="image"
-              style={{ width: "30px" }}
-            />
-          </div>
-        );
-      })}
+      <Search setShowResult={setShowResult} setShowCategories={() => {}} />
+      {showResult && (
+        <div>
+          {meals.map((meal) => {
+            return (
+              <div key={meal.idMeal}>
+                <p>{meal.strMeal}</p>
+                <img
+                  src={meal.strMealThumb}
+                  alt="image"
+                  style={{ width: "50px" }}
+                />
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

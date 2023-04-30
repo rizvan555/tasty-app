@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import ProductItems from "../pages/ProductItems";
 import { IoIosCloseCircleOutline } from "react-icons/io";
-import { GiKnifeFork } from "react-icons/gi";
 import Logo from "../resource/Nav.png";
 import { Link } from "react-router-dom";
 import "../css/search.css";
 
-const Search = () => {
+const Search = ({ setShowCategories, setShowResult }) => {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);
@@ -30,7 +29,7 @@ const Search = () => {
       });
       setFiltered(filteredProducts);
     }
-  }, [search, products]);
+  }, [search, products, setShowCategories]);
 
   const reloadPage = () => {
     window.location.reload();
@@ -50,7 +49,11 @@ const Search = () => {
             <input
               type="text"
               placeholder="Type something to search"
-              onChange={(event) => setSearch(event.target.value)}
+              onChange={(event) => {
+                setSearch(event.target.value);
+                setShowCategories(false);
+                setShowResult(false);
+              }}
               value={search}
             />
             <button onClick={reloadPage}>
@@ -58,10 +61,6 @@ const Search = () => {
             </button>
           </section>
 
-          {/* <Link to="/">
-            <GiKnifeFork />
-          </Link> */}
-              
           <section className="result-container">
             {search &&
               filtered.map((product) => {
