@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Search from "../components/Search";
 
-function CategoryResult() {
+function CategoryResults() {
   const { idCategory } = useParams();
   const [meals, setMeals] = useState([]);
   const [showResult, setShowResult] = useState(true);
@@ -28,7 +28,7 @@ function CategoryResult() {
           {meals.map((meal) => {
             return (
               <div key={meal.idMeal}>
-                <Link to={`categoryResult/${meal.strMeal}`}>
+                <Link to={`categoryResults/${meal.strMeal}`}>
                   <p>{meal.strMeal}</p>
                   <img
                     src={meal.strMealThumb}
@@ -44,4 +44,4 @@ function CategoryResult() {
     </div>
   );
 }
-export default CategoryResult;
+export default CategoryResults;

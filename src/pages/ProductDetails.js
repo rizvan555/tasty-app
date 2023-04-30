@@ -62,29 +62,33 @@ const ProductDetails = () => {
         setShowResult={() => {}}
         setShowCategories={() => {}}
       />
-      <div className="product-details">
-        {details && details.length > 0 && (
-          <img
-            src={meal.strMealThumb}
-            alt="img"
-            className="product-detailsImg"
-          />
-        )}
-        <div className="details-flex">
-          <div className="instructions">
-            <h1 className="product-details-headline">{meal.strMeal}</h1>
+      {showDetails && (
+        <div className="product-details">
+          {details && details.length > 0 && (
+            <img
+              src={meal.strMealThumb}
+              alt="img"
+              className="product-detailsImg"
+            />
+          )}
+          <div className="details-flex">
+            <div className="instructions">
+              <h1 className="product-details-headline">{meal.strMeal}</h1>
 
-            <ul className="instruction-block">{instructions}</ul>
-          </div>
-          <div>
-            <h2 className="product-details-headline">Ingredients</h2>
-            <div className="productDetails-ingredient-block">{ingredients}</div>
-            <Link to={meal.strYoutube} className="productDetails-link">
-              Watch on YouTube
-            </Link>
+              <ul className="instruction-block">{instructions}</ul>
+            </div>
+            <div>
+              <h2 className="product-details-headline">Ingredients</h2>
+              <div className="productDetails-ingredient-block">
+                {ingredients}
+              </div>
+              <Link to={meal.strYoutube} className="productDetails-link">
+                Watch on YouTube
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
