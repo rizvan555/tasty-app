@@ -9,10 +9,12 @@ const ProductItems = (props) => {
 
   return (
     <div onClick={handleItemClick} className="productItems">
-      <div className="image">
-        <img src={props.strMealThumb} alt="image" />
+      <div className="product-item">
+        <div className="image">
+          <img src={props.strMealThumb} alt="image" />
+        </div>
+        <h3>{props.strMeal}</h3>
       </div>
-      <h3>{props.strMeal}</h3>
     </div>
   );
 };
