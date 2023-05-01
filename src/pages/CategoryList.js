@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Search from "../components/Search";
+import "../css/categoryList.css";
+import clickSound from "../sounds/mouse-click.wav";
 
 function CategoryList() {
   const [categories, setCategories] = useState([]);
@@ -14,6 +16,11 @@ function CategoryList() {
       });
   }, []);
 
+  const handleClick = () => {
+    const audio = new Audio(clickSound);
+    audio.play();
+  };
+
   return (
     <div>
       <Search
@@ -21,18 +28,36 @@ function CategoryList() {
         setShowResult={() => {}}
         setShowDetails={() => {}}
       />
+      <h3 className="head-presentation">Oor go to through our categories </h3>
       {showCategories && (
         <div className="categoryListContainer">
-          {categories.map((category) => {
+          {categories.map((category, index) => {
             return (
-              <div key={category.idCategory} className="categoryList">
-                <Link to={`/categoryList/${category.strCategory}`}>
-                  <h2>{category.strCategory}</h2>
-                  <img src={category.strCategoryThumb} alt="category" />
-                </Link>
-              </div>
+              <article key={category.idCategory}>
+                <div
+                  className="categoryList"
+                  style={
+                    index % 2 === 1
+                      ? { backgroundColor: "#a0bfb7" }
+                      : { backgroundColor: "#d6dfc9" }
+                  }
+                  onClick={handleClick}
+                >
+                  <Link to={`/categoryList/${category.strCategory}`}>
+                    <h2>{category.strCategory}</h2>
+                    <img src={category.strCategoryThumb} alt="category" />
+                  </Link>
+                </div>
+              </article>
             );
           })}
+          <Link
+            to="/random"
+            className="cagetoryList-random"
+            onClick={handleClick}
+          >
+            <h2>Random</h2>
+          </Link>
         </div>
       )}
     </div>

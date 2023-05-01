@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Search from "../components/Search";
+import clickSound from "../sounds/mouse-click.wav";
 
 function CategoryResults() {
   const { idCategory } = useParams();
@@ -15,6 +16,11 @@ function CategoryResults() {
       });
   }, [idCategory]);
 
+  const handleClick = () => {
+    const audio = new Audio(clickSound);
+    audio.play();
+  };
+
   return (
     <div>
       <Search
@@ -27,7 +33,7 @@ function CategoryResults() {
         <div>
           {meals.map((meal) => {
             return (
-              <div key={meal.idMeal}>
+              <div key={meal.idMeal} onClick={handleClick}>
                 <Link to={`/categoryResults/${meal.idMeal}`}>
                   <p>{meal.strMeal}</p>
                   <img

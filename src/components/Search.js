@@ -4,6 +4,7 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 import Logo from "../resource/Nav.png";
 import { Link } from "react-router-dom";
 import "../css/search.css";
+import clickSound from "../sounds/mouse-click.wav";
 
 const Search = ({ setShowCategories, setShowResult, setShowDetails }) => {
   const [search, setSearch] = useState("");
@@ -35,10 +36,15 @@ const Search = ({ setShowCategories, setShowResult, setShowDetails }) => {
     window.location.reload();
   };
 
+  const handleClick = () => {
+    const audio = new Audio(clickSound);
+    audio.play();
+  };
+
   return (
     <div className="search_firstParentContainer">
       <Link to="/">
-        <img src={Logo} alt={Logo} className="logo" />
+        <img src={Logo} alt={Logo} className="logo" onClick={handleClick} />
       </Link>
       <section className="big-container">
         <h1 className="headline-searchbar">
@@ -56,6 +62,7 @@ const Search = ({ setShowCategories, setShowResult, setShowDetails }) => {
                 setShowDetails(false);
               }}
               value={search}
+              onClick={handleClick}
             />
             <button onClick={reloadPage}>
               <IoIosCloseCircleOutline className="close-icon" size={20} />
