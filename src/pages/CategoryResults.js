@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import Search from "../components/Search";
 import clickSound from "../sounds/mouse-click.wav";
 
+
 function CategoryResults() {
   const { idCategory } = useParams();
   const [meals, setMeals] = useState([]);
@@ -23,6 +24,7 @@ function CategoryResults() {
 
   return (
     <div>
+
       <Search
         setShowResult={setShowResult}
         setShowCategories={() => {}}
@@ -45,6 +47,7 @@ function CategoryResults() {
               </div>
             );
           })}
+
         </div>
       )}
     </div>
