@@ -1,0 +1,78 @@
+.product-details {
+    background-color: #96c0b7f1;
+    color: white;
+    font-family: "Poppins-light";
+    margin: 6% 11vw;
+    border-radius: 20px;
+    
+}
+.product-detailsImg {
+    width: 40vw;
+    margin-top: 25px;
+    border-radius:15px;
+    -webkit-box-shadow: -1px 2px 24px -3px #707070; 
+    box-shadow: -1px 2px 24px -3px #707070;;
+}
+
+.details-flex {
+    /* margin: 0px 10vw; */
+    display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.product-details-headline {
+    font-family: "Poppins-light";
+    font-size: 40px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    margin-left: -5px;
+}
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.instruction-block {
+    text-align: left;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.015);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 10vh;
+}
+
+.instruction-points {
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.productDetails-ingredient-block {
+    text-align: left;
+    margin-bottom: 35px;
+    background-color: rgba(255, 255, 255, 0.017);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 25px;
+    width: 25vw;
+}
+
+
+.ingredient-points {
+    font-family: "Poppins-bold";
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.productDetails-link {
+    font-family: "Poppins-bold";
+    font-size: 25px;
+    text-decoration: none;
+    background-color: white;
+    color:  #96c0b7f1;
+    border-radius: 30px;
+    padding: 10px 30px;
+}

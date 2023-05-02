@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import ProductItems from "../pages/ProductItems";
-import { GiKnifeFork } from "react-icons/gi";
+import { IoIosCloseCircleOutline } from "react-icons/io";
+import Logo from "../resource/Nav.png";
+import { Link } from "react-router-dom";
+import "../css/search.css";
+import clickSound from "../sounds/mouse-click.wav";
 
-const Search = () => {
+const Search = ({ setShowCategories, setShowResult, setShowDetails }) => {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);
-
 
   useEffect(() => {
     fetch("https://www.themealdb.com/api/json/v1/1/search.php?s")
@@ -27,38 +30,59 @@ const Search = () => {
       });
       setFiltered(filteredProducts);
     }
-  }, [search, products]);
+  }, [search, products, setShowCategories, setShowResult, setShowDetails]);
 
-  const handleReloadPage = () => {
+  const reloadPage = () => {
     window.location.reload();
   };
 
-  return (
-    <div>
-      <section className="search-container">
-        <button onClick={handleReloadPage}>
-          <GiKnifeFork />
-        </button>
-        <input
-          type="text"
-          placeholder="Type something to search"
-          onChange={(event) => setSearch(event.target.value)}
-          value={search}
-        />
-      </section>
+  const handleClick = () => {
+    const audio = new Audio(clickSound);
+    audio.play();
+  };
 
-      <section className="result-container">
-        {search &&
-          filtered.map((product) => {
-            return (
-              <ProductItems
-                key={product.idMeal}
-                idMeal={product.idMeal}
-                strMeal={product.strMeal}
-                strMealThumb={product.strMealThumb}
-              />
-            );
-          })}
+  return (
+    <div className="search_firstParentContainer">
+      <Link to="/">
+        <img src={Logo} alt={Logo} className="logo" onClick={handleClick} />
+      </Link>
+      <section className="big-container">
+        <h1 className="headline-searchbar">
+          Find a recipe, an idea, an inspiration...
+        </h1>
+        <div className="search-container">
+          <section className="search-box">
+            <input
+              type="text"
+              placeholder="Type something to search"
+              onChange={(event) => {
+                setSearch(event.target.value);
+                setShowCategories(false);
+                setShowResult(false);
+                setShowDetails(false);
+              }}
+              value={search}
+              onClick={handleClick}
+            />
+            <button onClick={reloadPage}>
+              <IoIosCloseCircleOutline className="close-icon" size={20} />
+            </button>
+          </section>
+
+          <section className="result-container">
+            {search &&
+              filtered.map((product) => {
+                return (
+                  <ProductItems
+                    key={product.idMeal}
+                    idMeal={product.idMeal}
+                    strMeal={product.strMeal}
+                    strMealThumb={product.strMealThumb}
+                  />
+                );
+              })}
+          </section>
+        </div>
       </section>
     </div>
   );
