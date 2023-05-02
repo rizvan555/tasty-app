@@ -23,18 +23,18 @@
   src: url("./components/fonts/Roboto/Roboto-Bold.ttf");
 }
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='90' viewBox='0 0 100 100' style='fill:black;font-size:64px; transform:rotate(-25deg);'><text y='40%'>🍴</text></svg>"),
+    auto;
 }
 
 /* ======= GENERALS ======= */
 .App {
   text-align: center;
 }
-
 
 .productItems img {
   width: 60px;
@@ -50,4 +50,3 @@
   margin: 0 auto;
   text-align: center;
 }
-
