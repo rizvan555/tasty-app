@@ -16,7 +16,7 @@
     margin: 1vh auto;
     background: #96C0B7;
     border-radius: 10px;
-    min-height: 90vh; /* use min-height instead of height to allow the container to expand if necessary */
+    min-height: 90vh; 
     width: 70vw;
 }
 

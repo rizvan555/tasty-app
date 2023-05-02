@@ -25,13 +25,11 @@ function CategoryResults() {
 
   return (
     <div>
-
       <Search
         setShowResult={setShowResult}
         setShowCategories={() => {}}
         setShowDetails={() => {}}
       />
-
       {showResult && (
         <div className="container_result">
           {meals.map((meal, index) => {
@@ -54,13 +52,10 @@ function CategoryResults() {
                       src={meal.strMealThumb}
                       alt="image"
                     />
-                  
-                  
                 </Link>
               </div>
             );
           })}
-
         </div>
       )}
     </div>
