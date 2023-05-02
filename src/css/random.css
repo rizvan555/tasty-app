@@ -1,3 +1,7 @@
+/* @font-face {
+    font-family: 'Poppins', sans-serif;
+    src: url("../components/");
+} */
 
 *{
     box-sizing: border-box;
@@ -45,19 +49,24 @@
     margin: 0 0 2vh 0;
 }
 
+.container_left ul {
+    padding: 0; /* removes the default padding */
+}
+
 .container_left li{
     font-weight: 400;
+    margin: 0 0 1.5rem 1.3rem;
 }
 /* --------- Container right: Measure & Ingredients ----------- */
 .container_right{
     display: flex;
     flex-direction: column;
     text-align: left;
-    width: 23%;
+    width: 21%;
 }
 
 .container_right h3{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 0 0 2vh 0;
 }
 
@@ -65,7 +74,6 @@
     text-decoration: none;
     margin-bottom: 1.5vh;
     font-weight: 500;
-
 }
 
 .button_video{

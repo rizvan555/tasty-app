@@ -25,7 +25,8 @@ const Random = () => {
       });
   }, []);
 
-//Funktion for youtube video
+  
+// ------------- Funktion for youtube video ------------- 
   const Video = ({ video }) => {
     const handleClick = () => {
       window.open(video.strYoutube, "_blank");
@@ -36,7 +37,7 @@ const Random = () => {
       </div>
     );
   };
-
+// ------------- Funktion over ------------- 
 
   return (
     <div  className="container_random">
@@ -50,10 +51,14 @@ const Random = () => {
           <section className="all_texts">
             <div className="container_left">
               <h2>{meal.strMeal}</h2>
-              <li>{meal.strInstructions.split(`. `)}</li>
+              {/* --- List bullet points and tab between */}
+              <ul>
+                {meal.strInstructions.split("\r\n").filter(step => step.trim() !== "").map((step, index) => (
+                <li key={index}>{step}</li>
+                ))}
+              </ul>
+
             </div>
-            
-            
             {ingredients.length === 0 ? (
             <p>Sorry, no ingredients</p>
           ) : (
@@ -66,7 +71,6 @@ const Random = () => {
               ))}
                   <Video video={meal} />
               </ul>
-              
           )}
           </section>
         </section>
