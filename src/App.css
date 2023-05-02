@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 /* ======= GENERALS ======= */
 
 @font-face {
@@ -24,6 +23,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='120' viewBox='0 0 100 100' style='fill:black;font-size:54px; transform:rotate(-25deg);'><text y='60%'>🍴</text></svg>"),
+    auto;
 }
 
 .productItems img {
@@ -40,4 +41,3 @@
   margin: 0 auto;
   text-align: center;
 }
-

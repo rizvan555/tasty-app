@@ -5,6 +5,8 @@
   color: #96c0b7;
   font-size: 25px;
   font-weight: 500;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='60' height='90' viewport='0 0 100 100' style='fill:black;font-size:54px;'><text y='50%'>🍴</text></svg>"),
+    auto;
 }
 
 .categoryListContainer {
@@ -13,6 +15,7 @@
   width: 95vw;
   margin: 10px auto;
   gap: 10px;
+  
 }
 .categoryList {
   width: 30vw;
@@ -20,19 +23,24 @@
   border: 1px solid #e3e3e3;
   border-radius: 8px;
   padding: 20px 10px;
-  cursor: pointer;
+  
 }
 .categoryList:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.categoryList article {
+  
+}
 .categoryList img {
   width: 25vw;
   margin-top: 30px;
+  
 }
 .categoryList a {
   color: #fff;
   font-size: 15px;
   text-decoration: none;
+  
 }
 .cagetoryList-random {
   display: flex;

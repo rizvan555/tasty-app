@@ -28,7 +28,7 @@ function CategoryList() {
         setShowResult={() => {}}
         setShowDetails={() => {}}
       />
-      <h3 className="head-presentation">Oor go to through our categories </h3>
+      <h3 className="head-presentation">Or go to through our categories </h3>
       {showCategories && (
         <div className="categoryListContainer">
           {categories.map((category, index) => {
