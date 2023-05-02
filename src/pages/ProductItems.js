@@ -1,19 +1,29 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import clickSound from "../sounds/mouse-click.wav";
+import "../css/productItems.css";
 
 const ProductItems = (props) => {
-  const navigator = useNavigate();
-
-  const handleItemClick = () => {
-    navigator(`productList/${props.strMeal}`);
+  const handleClick = () => {
+    const audio = new Audio(clickSound);
+    audio.play();
   };
 
   return (
-    <div onClick={handleItemClick} className="productItems">
-      <div className="image">
-        <img src={props.strMealThumb} alt="image" />
+    <Link
+      to={`categoryResults/${props.idMeal}`}
+      onClick={handleClick}
+      className="productItems"
+      style={
+        props % 2 === 1
+          ? { backgroundColor: "#a0bfb7" }
+          : { backgroundColor: "#d6dfc9" }
+      }
+    >
+      <div className="product-item">
+        <h2>{props.strMeal}</h2>
+        <img src={props.strMealThumb} alt="image" className="image" />
       </div>
-      <h3>{props.strMeal}</h3>
-    </div>
+    </Link>
   );
 };
 
