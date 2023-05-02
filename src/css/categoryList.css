@@ -5,42 +5,53 @@
   color: #96c0b7;
   font-size: 25px;
   font-weight: 500;
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='60' height='90' viewport='0 0 100 100' style='fill:black;font-size:54px;'><text y='50%'>🍴</text></svg>"),
-    auto;
+  text-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
-
 .categoryListContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 95vw;
   margin: 10px auto;
-  gap: 10px;
-  
+  gap: 20px;
 }
 .categoryList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 30vw;
   height: 55vh;
   border: 1px solid #e3e3e3;
   border-radius: 8px;
   padding: 20px 10px;
-  
+  -webkit-transform: perspective(2px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+  color: #fff;
 }
-.categoryList:hover {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.categoryList:hover,
+.categoryList:focus,
+.categoryList:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
-.categoryList article {
-  
+.categoryList h2 {
+  text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .categoryList img {
   width: 25vw;
   margin-top: 30px;
-  
 }
 .categoryList a {
   color: #fff;
   font-size: 15px;
   text-decoration: none;
-  
+  border-radius: 10px;
+  padding: 5px;
 }
 .cagetoryList-random {
   display: flex;

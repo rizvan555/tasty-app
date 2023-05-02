@@ -64,8 +64,12 @@ const Search = ({ setShowCategories, setShowResult, setShowDetails }) => {
               value={search}
               onClick={handleClick}
             />
-            <button onClick={reloadPage}>
-              <IoIosCloseCircleOutline className="close-icon" size={20} />
+            <button>
+              <IoIosCloseCircleOutline
+                className="close-icon"
+                size={30}
+                onClick={reloadPage}
+              />
             </button>
           </section>
 

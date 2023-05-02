@@ -1,5 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import clickSound from "../sounds/mouse-click.wav";
+import "../css/productItems.css";
 
 const ProductItems = (props) => {
   const handleClick = () => {
@@ -12,12 +13,15 @@ const ProductItems = (props) => {
       to={`categoryResults/${props.idMeal}`}
       onClick={handleClick}
       className="productItems"
+      style={
+        props % 2 === 1
+          ? { backgroundColor: "#a0bfb7" }
+          : { backgroundColor: "#d6dfc9" }
+      }
     >
       <div className="product-item">
-        <div className="image">
-          <img src={props.strMealThumb} alt="image" />
-        </div>
-        <h3>{props.strMeal}</h3>
+        <h2>{props.strMeal}</h2>
+        <img src={props.strMealThumb} alt="image" className="image" />
       </div>
     </Link>
   );
