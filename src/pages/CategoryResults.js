@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 
-
 function CategoryResults() {
   const [categories, setCategories] = useState([
     "Beef",
@@ -42,7 +41,7 @@ function CategoryResults() {
 
   return (
     <div>
-     
+    
       <div>
         {categories.map((category) => (
           <button
@@ -59,9 +58,7 @@ function CategoryResults() {
           {categoryResults.map((result) => (
             <div key={result.idMeal}>{result.strMeal}
             <img src={result.strMealThumb} alt={result.strMeal} />
-             
-
-             </div>
+          </div>
           ))}
         </div>
       )}
