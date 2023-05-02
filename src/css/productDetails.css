@@ -1,78 +1,102 @@
-.product-details {
-    background-color: #96c0b7f1;
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
     color: white;
-    font-family: "Poppins-light";
-    margin: 6% 11vw;
-    border-radius: 20px;
-    
-}
-.product-detailsImg {
-    width: 40vw;
-    margin-top: 25px;
-    border-radius:15px;
-    -webkit-box-shadow: -1px 2px 24px -3px #707070; 
-    box-shadow: -1px 2px 24px -3px #707070;;
 }
 
-.details-flex {
-    /* margin: 0px 10vw; */
-    display: flex;
-    margin-left: 30px;
-    margin-right: 30px;
-}
+/* ------- GENERALS --------- */
 
-.product-details-headline {
-    font-family: "Poppins-light";
-    font-size: 40px;
-    margin-bottom: 40px;
-    margin-top: 30px;
-    margin-left: -5px;
-}
 
-.instructions {
-    display: flex;
+/* -------- my Container Box ---------- */
+.product-details {
+    display: inline-flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center; 
+    justify-content: center; 
+    margin: 1vh auto;
+    background: #96C0B7;
+    border-radius: 10px;
+    min-height: 90vh; /* use min-height instead of height to allow the container to expand if necessary */
+    width: 70vw;
+}
+
+/*------------ IMAGE------------ */
+.product-detailsImg {
+    width: 65vw;
+    height: 47vh;
+    margin: 2vh 0 1vh 0;
+    /* clip: rect(10% 20% 10% 5%); */
+    object-fit: cover;
+    -webkit-box-shadow: -0.5px 0.8px 24px -2px #fafafa;
+    box-shadow: -1px 2px 24px -3px #fafafa;
+}
+
+/* --------- mein all Texts / both container --------- */
+.details-flex {
+    display: flex;
+    justify-content: space-between;
+    margin: 2vh auto; 
+    width: 65vw;
+}
+
+
+/* --------- Container left: description ----------- */
+.product-details-headline {
+    font-family: "Poppins-Regular";
+    font-size: 1.8rem;
+    margin: 0 0 2vh 0;
+    text-align: left;
+    display: flex;
 }
 
 .instruction-block {
+    display: flex;
+    flex-direction: column;
+    width: 48vw;
     text-align: left;
-    width: 80%;
-    background-color: rgba(255, 255, 255, 0.015);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 10vh;
 }
 
-.instruction-points {
-    margin-bottom: 30px;
-    font-weight: 600;
+.instructions ul {
+    padding: 0;
 }
 
+.instructions li {
+    font-family: "Poppins-Regular";
+    font-weight: 400;
+    margin: 0 0 1.5rem 1.3rem;
+}
+
+
+/* --------- Container right: Measure & Ingredients ----------- */
 .productDetails-ingredient-block {
+    width: 8rem;
     text-align: left;
-    margin-bottom: 35px;
-    background-color: rgba(255, 255, 255, 0.017);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 25px;
-    width: 25vw;
+    margin: 0 auto;
 }
 
+.product-details-h3{
+    font-size: 1.5rem;
+    margin: 0 0 2vh 0;
+}
 
 .ingredient-points {
-    font-family: "Poppins-bold";
-    font-size: 20px;
-    margin-bottom: 10px;
+    text-decoration: none;
+    margin-bottom: 1.5vh;
+    font-weight: 500;
 }
 
+/* --------------- button -------------------  */
 .productDetails-link {
-    font-family: "Poppins-bold";
-    font-size: 25px;
-    text-decoration: none;
+    font-family: "Roboto-button";
+    font-size: 1.1rem;
     background-color: white;
-    color:  #96c0b7f1;
-    border-radius: 30px;
-    padding: 10px 30px;
+    color:#96C0B7;
+    padding: 0.8rem 1.5rem;
+    margin: 1vh 0 0 2vw;
+    border:none; 
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 900;
+    display: inline-flex;
 }

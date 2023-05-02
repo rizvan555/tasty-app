@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import "../css/random.css"
+import Search from "./Search";
 
 const Random = () => {
   const [meal, setMeal] = useState(null);
   const [ingredients, setIngredients] = useState([]);
+  const [showRandom, setShowRandom] = useState(true);
 
   useEffect(() => {
     fetch("https://www.themealdb.com/api/json/v1/1/random.php")
@@ -40,7 +42,15 @@ const Random = () => {
 // ------------- Funktion over ------------- 
 
   return (
-    <div  className="container_random">
+    <>
+      <Search
+        setShowRandom={setShowRandom}
+        setShowResult={() => {}}
+        setShowCategories={() => { }}
+        setShowDetails={()=> {}}
+      />
+      {showRandom&&
+    <div className="container_random">
       {meal ? (
         <section className="container_box">
           <div>
@@ -77,7 +87,10 @@ const Random = () => {
       ) : (
         <p>Loading meal...</p>
       )}
-    </div>
+        </div>
+      }
+    </>
+
   );
 };
 
