@@ -1,69 +1,56 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import Search from "../components/Search";
+import clickSound from "../sounds/mouse-click.wav";
 
 
 function CategoryResults() {
-  const [categories, setCategories] = useState([
-    "Beef",
-    "Chicken",
-    "Dessert",
-    "Lamb",
-    "Miscellaneous",
-    "Pasta",
-    "Pork",
-    "Seafood",
-    "Side",
-    "Starter",
-    "Vegan",
-    "Vegetarian",
-    "Breakfast",
-    "Goat",
-  ]);
-
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [categoryResults, setCategoryResults] = useState([]);
+  const { idCategory } = useParams();
+  const [meals, setMeals] = useState([]);
+  const [showResult, setShowResult] = useState(true);
 
   useEffect(() => {
-    async function fetchCategoryResults() {
-      if (selectedCategory !== "") {
-        const response = await fetch(
-          `https://www.themealdb.com/api/json/v1/1/filter.php?c=${selectedCategory}`
-        );
-        const data = await response.json();
-        setCategoryResults(data.meals);
-      }
-    }
-    fetchCategoryResults();
-  }, [selectedCategory]);
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${idCategory}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setMeals(data.meals);
+      });
+  }, [idCategory]);
 
-  function handleCategorySelect(category) {
-    setSelectedCategory(category);
-  }
+  const handleClick = () => {
+    const audio = new Audio(clickSound);
+    audio.play();
+  };
 
   return (
     <div>
-    
-      <div>
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => handleCategorySelect(category)}
-          >
-            {category}
-        
-          </button>
-        ))}
-      </div>
-      {categoryResults.length > 0 && (
+
+      <Search
+        setShowResult={setShowResult}
+        setShowCategories={() => {}}
+        setShowDetails={() => {}}
+      />
+
+      {showResult && (
         <div>
-          {categoryResults.map((result) => (
-            <div key={result.idMeal}>{result.strMeal}
-            <img src={result.strMealThumb} alt={result.strMeal} />
-          </div>
-          ))}
+          {meals.map((meal) => {
+            return (
+              <div key={meal.idMeal} onClick={handleClick}>
+                <Link to={`/categoryResults/${meal.idMeal}`}>
+                  <p>{meal.strMeal}</p>
+                  <img
+                    src={meal.strMealThumb}
+                    alt="image"
+                    style={{ width: "50px" }}
+                  />
+                </Link>
+              </div>
+            );
+          })}
+
         </div>
       )}
     </div>
   );
 }
-
 export default CategoryResults;
