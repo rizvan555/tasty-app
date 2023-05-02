@@ -51,7 +51,8 @@ const ProductDetails = () => {
     if (meal[`strIngredient${i}`]) {
       ingredients.push(
         <p key={i} className="ingredient-points">
-          {meal[`strIngredient${i}`]} - {meal[`strMeasure${i}`]}
+          {/* {meal[`strIngredient${i}`]} - {meal[`strMeasure${i}`]} */}
+          {meal[`strMeasure${i}`]} {meal[`strIngredient${i}`]}
         </p>
       );
     }
@@ -80,12 +81,12 @@ const ProductDetails = () => {
               <ul className="instruction-block">{instructions}</ul>
             </div>
             <div>
-              <h2 className="product-details-headline">Ingredients</h2>
+              <h3 className="product-details-h3">Ingredients</h3>
               <div className="productDetails-ingredient-block">
                 {ingredients}
               </div>
               <Link to={meal.strYoutube} className="productDetails-link">
-                Watch on YouTube
+                Watch Video
               </Link>
             </div>
           </div>

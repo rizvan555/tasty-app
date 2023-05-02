@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+/* ------- GENERALS --------- */
+/* ----- complete container ------ */
+.container_result{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 90vw;
+    margin: 10px auto;
+    gap: 20px;
+}
+/* ----- each Item ------ */
+.container_item{
+    width: 30vw;
+    height: 40vh;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    padding: 20px 10px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.container_item a{
+    font-family: "Poppins-Regular";
+    font-weight: 900;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.container_item p{
+    font-family: "Poppins-Regular";
+    margin-bottom: 0.5rem;
+}
+
+.container_item .container_img{
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2vh auto 2vh auto;
+    border-radius: 8px;
+}

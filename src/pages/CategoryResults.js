@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Search from "../components/Search";
 import clickSound from "../sounds/mouse-click.wav";
+import '../css/categoryResult.css'
 
 
 function CategoryResults() {
@@ -32,17 +33,29 @@ function CategoryResults() {
       />
 
       {showResult && (
-        <div>
-          {meals.map((meal) => {
+        <div className="container_result">
+          {meals.map((meal, index) => {
+            
             return (
-              <div key={meal.idMeal} onClick={handleClick}>
+              <div
+              style={
+                index % 2 === 0
+                  ? { backgroundColor: "#a0bfb7" }
+                  : { backgroundColor: "#d6dfc9" }
+              }
+                className="container_item"
+                key={meal.idMeal}
+                onClick={handleClick}>
+                
                 <Link to={`/categoryResults/${meal.idMeal}`}>
                   <p>{meal.strMeal}</p>
-                  <img
-                    src={meal.strMealThumb}
-                    alt="image"
-                    style={{ width: "50px" }}
-                  />
+                    <img 
+                      className="container_img"
+                      src={meal.strMealThumb}
+                      alt="image"
+                    />
+                  
+                  
                 </Link>
               </div>
             );
