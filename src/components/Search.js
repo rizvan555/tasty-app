@@ -6,7 +6,12 @@ import { Link } from "react-router-dom";
 import "../css/search.css";
 import clickSound from "../sounds/mouse-click.wav";
 
-const Search = ({ setShowCategories, setShowResult, setShowDetails, setShowRandom }) => {
+const Search = ({
+  setShowCategories,
+  setShowResult,
+  setShowDetails,
+  setShowRandom = () => {},
+}) => {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);
@@ -30,7 +35,14 @@ const Search = ({ setShowCategories, setShowResult, setShowDetails, setShowRando
       });
       setFiltered(filteredProducts);
     }
-  }, [search, products, setShowCategories, setShowResult, setShowDetails, setShowRandom]);
+  }, [
+    search,
+    products,
+    setShowCategories,
+    setShowResult,
+    setShowDetails,
+    setShowRandom,
+  ]);
 
   const reloadPage = () => {
     window.location.reload();

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../css/random.css"
+import "../css/random.css";
 import Search from "./Search";
 
 const Random = () => {
@@ -27,70 +27,69 @@ const Random = () => {
       });
   }, []);
 
-  
-// ------------- Funktion for youtube video ------------- 
+  // ------------- Funktion for youtube video -------------
   const Video = ({ video }) => {
     const handleClick = () => {
       window.open(video.strYoutube, "_blank");
     };
     return (
       <div>
-        <button className="button_video" onClick={handleClick}>Watch video</button>
+        <button className="button_video" onClick={handleClick}>
+          Watch video
+        </button>
       </div>
     );
   };
-// ------------- Funktion over ------------- 
+  // ------------- Funktion over -------------
 
   return (
-    <>
+    <div>
       <Search
         setShowRandom={setShowRandom}
+        setShowCategories={() => {}}
         setShowResult={() => {}}
-        setShowCategories={() => { }}
-        setShowDetails={()=> {}}
+        setShowDetails={() => {}}
       />
-      {showRandom&&
-    <div className="container_random">
-      {meal ? (
-        <section className="container_box">
-          <div>
-            <img src={meal.strMealThumb} alt={meal.strMeal} />
-          </div>
-            
-          
-          <section className="all_texts">
-            <div className="container_left">
-              <h2>{meal.strMeal}</h2>
-              {/* --- List bullet points and tab between */}
-              <ul>
-                {meal.strInstructions.split("\r\n").filter(step => step.trim() !== "").map((step, index) => (
-                <li key={index}>{step}</li>
-                ))}
-              </ul>
+      {showRandom && (
+        <div className="container_random">
+          {meal ? (
+            <section className="container_box">
+              <div>
+                <img src={meal.strMealThumb} alt={meal.strMeal} />
+              </div>
 
-            </div>
-            {ingredients.length === 0 ? (
-            <p>Sorry, no ingredients</p>
+              <section className="all_texts">
+                <div className="container_left">
+                  <h2>{meal.strMeal}</h2>
+                  {/* --- List bullet points and tab between */}
+                  <ul>
+                    {meal.strInstructions
+                      .split("\r\n")
+                      .filter((step) => step.trim() !== "")
+                      .map((step, index) => (
+                        <li key={index}>{step}</li>
+                      ))}
+                  </ul>
+                </div>
+                {ingredients.length === 0 ? (
+                  <p>Sorry, no ingredients</p>
+                ) : (
+                  <ul className="container_right">
+                    <h3>Ingredients</h3>
+                    {ingredients.map((ingredient, index) => (
+                      <p key={index}>{ingredient}</p>
+                    ))}
+                    <Video video={meal} />
+                  </ul>
+                )}
+              </section>
+            </section>
           ) : (
-              
-              <ul className="container_right">
-                <h3>Ingredients</h3>
-              {ingredients.map((ingredient, index) => (
-                <p key={index}>{ingredient}</p>
-                
-              ))}
-                  <Video video={meal} />
-              </ul>
+            <p>Loading meal...</p>
           )}
-          </section>
-        </section>
-      ) : (
-        <p>Loading meal...</p>
-      )}
         </div>
-      }
-    </>
-
+      )}
+    </div>
   );
 };
 
