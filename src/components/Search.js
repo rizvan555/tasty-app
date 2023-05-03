@@ -7,6 +7,7 @@ import "../css/search.css";
 import clickSound from "../sounds/mouse-click.wav";
 
 const Search = ({
+  light,
   setShowCategories,
   setShowResult,
   setShowDetails,
@@ -24,25 +25,20 @@ const Search = ({
 
   useEffect(() => {
     if (products) {
-      const filteredProducts = products.filter((product) => {
-        return (
-          product.strMeal.toLowerCase().includes(search.toLowerCase()) ||
-          product.strArea.toLowerCase().includes(search.toLowerCase()) ||
-          (product.strTags &&
-            product.strTags.toLowerCase().includes(search.toLowerCase())) ||
-          product.strCategory.toLowerCase().includes(search.toLowerCase())
-        );
-      });
-      setFiltered(filteredProducts);
+      setTimeout(() => {
+        const filteredProducts = products.filter((product) => {
+          return (
+            product.strMeal.toLowerCase().includes(search.toLowerCase()) ||
+            product.strArea.toLowerCase().includes(search.toLowerCase()) ||
+            (product.strTags &&
+              product.strTags.toLowerCase().includes(search.toLowerCase())) ||
+            product.strCategory.toLowerCase().includes(search.toLowerCase())
+          );
+        });
+        setFiltered(filteredProducts);
+      }, 500);
     }
-  }, [
-    search,
-    products,
-    setShowCategories,
-    setShowResult,
-    setShowDetails,
-    setShowRandom,
-  ]);
+  }, [search, products]);
 
   const reloadPage = () => {
     window.location.reload();
@@ -76,6 +72,7 @@ const Search = ({
               }}
               value={search}
               onClick={handleClick}
+              style={{ backgroundColor: light ? "#d4dfc780" : "#d6dfc9" }}
             />
             <button>
               <IoIosCloseCircleOutline
