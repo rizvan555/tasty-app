@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import clickSound from "../sounds/mouse-click.wav";
 import "../css/productItems.css";
+import "../css/mediaQuerys/queryItems.css";
 
 const ProductItems = (props) => {
   const handleClick = () => {
