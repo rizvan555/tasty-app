@@ -1,63 +1,73 @@
-
-
-@media only screen and (device-width: 390px) and (device-height: 844px){
-
-.container_box {
-    margin: 1vh auto;
+@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+  
+  .container_random {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1vh auto 3vh auto;
     background: #96c0b7;
     border-radius: 10px;
-    min-height: 50vh;
-    width: 80vw;
+    width: 90vw;
+    padding: 40px;
   }
-  
-  /*------------ IMAGE------------ */
   .container_box img {
-    width: 50vw;
-    height: 20vh;
+    width: 80vw;
+    height: 25vh;
+    margin: 2vh 0 1vh 0;
+    object-fit: cover;
+    -webkit-box-shadow: -0.5px 0.8px 24px -2px #fafafa;
+    box-shadow: -1px 2px 24px -3px #fafafa;
   }
-  /* --------- all Texts --------- */
-  .all_texts {
-    display: flex;
-    justify-content: space-between;
-    margin: 2vh auto;
-    width: 65vw;
-  }
-  /* --------- Container left: description ----------- */
+
   .container_left {
     display: flex;
     flex-direction: column;
-    width: 48vw;
+    width: 80vw;
     text-align: left;
   }
-  
   .container_left h2 {
-    font-size: 1rem;
-   
+    font-family: "Poppins-Regular";
+    font-size: 1.4rem;
+    margin: 0 0 1vh 0;
+    text-align: left;
+    display: flex;
   }
-    .container_left li {
+  .all_texts  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    text-align: left;
+    padding: 0;
+    font-family: "Poppins-Regular";
     font-weight: 400;
-    margin: 0 0 0 0;
+    margin: 0 0 1.5rem 1.3rem;
+    font-size: 0.8rem;
   }
 
-  /* --------- Container right: Measure & Ingredients ----------- */
   .container_right {
-    width: 25%;
+    width: 16rem;
+    text-align: left;
+    margin: 0 auto;
   }
-  
   .container_right h3 {
     font-size: 1rem;
+    margin: 0 0 2vh 0;
   }
-  
-  .container_right p {
-    font-size: 1rem;
-    text-decoration: none;
-    margin-bottom: 1vh;
-    font-weight: 300;
-  }
-  /* --------------- button -------------------  */
   .button_video {
-    font-size: 1rem;
-    padding: 1rem 1rem;
-    margin: 2vh 1vh 1vh 0;
-}
+    font-family: "Roboto-button";
+    font-size: 0.6rem;
+    background-color: white;
+    color: #96c0b7;
+    padding: 0.8rem 1.5rem;
+    margin: 3vh 0 0 2vw;
+    border: none;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 900;
+    display: inline-flex;
+  }
+
 }
