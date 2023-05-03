@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import clickSound from "../sounds/mouse-click.wav";
 import "../css/productItems.css";
 
+
 const ProductItems = (props) => {
   const handleClick = () => {
     const audio = new Audio(clickSound);
@@ -9,6 +10,7 @@ const ProductItems = (props) => {
   };
 
   return (
+    
     <Link
       to={`categoryResults/${props.idMeal}`}
       onClick={handleClick}
