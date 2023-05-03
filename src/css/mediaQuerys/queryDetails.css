@@ -8,11 +8,13 @@
     background: #96c0b7;
     border-radius: 10px;
     width: 80vw;
-    padding: 40px;
+    padding: 20px;
   }
   .product-detailsImg {
-    width: 75vw;
-    height: 25vh;
+    width: 70vw;
+    height: 20vh;
+  }
+  
     margin: 2vh 0 1vh 0;
     object-fit: cover;
     -webkit-box-shadow: -0.5px 0.8px 24px -2px #fafafa;
@@ -24,12 +26,12 @@
     align-items: center;
     flex-direction: column;
     margin: 2vh auto;
-    width: 60vw;
+    width: 50vw;
   }
   .product-details-headline {
     font-family: "Poppins-Regular";
     font-size: 1.4rem;
-    margin: 0 0 2vh 0;
+    margin: 0 0 2vh 3vw;
     text-align: left;
     display: flex;
   }
@@ -38,7 +40,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80vw;
+    width: 70vw;
     text-align: left;
   }
   .instructions ul {

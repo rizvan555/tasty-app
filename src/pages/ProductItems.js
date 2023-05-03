@@ -3,7 +3,6 @@ import clickSound from "../sounds/mouse-click.wav";
 import "../css/productItems.css";
 import "../css/mediaQuerys/queryItems.css";
 
-
 const ProductItems = (props) => {
   const handleClick = () => {
     const audio = new Audio(clickSound);
@@ -11,7 +10,6 @@ const ProductItems = (props) => {
   };
 
   return (
-    
     <Link
       to={`categoryResults/${props.idMeal}`}
       onClick={handleClick}
