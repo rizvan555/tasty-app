@@ -4,7 +4,6 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import Stack from "@mui/material/Stack";
-import "../css/mediaQuerys/querySwitch.css";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 82,
@@ -61,8 +60,8 @@ export default function CustomizedSwitches({ light, setLight }) {
           <MaterialUISwitch
             sx={{
               mt: 2,
-              width: { xs: 80, sm: 100, md: 30, lg: 40, xl: 50 },
-              ml: { xs: 37, sm: 57, md: 77, lg: 97, xl: 107 },
+              width: { xs: 75, sm: 100, md: 30, lg: 80, xl: 150 },
+              ml: { xs: 34, sm: 57, md: 77, lg: 167, xl: 177 },
             }}
             defaultChecked
           />

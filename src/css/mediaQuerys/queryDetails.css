@@ -7,11 +7,11 @@
     margin: 1vh auto 3vh auto;
     background: #96c0b7;
     border-radius: 10px;
-    width: 90vw;
+    width: 80vw;
     padding: 40px;
   }
   .product-detailsImg {
-    width: 80vw;
+    width: 75vw;
     height: 25vh;
     margin: 2vh 0 1vh 0;
     object-fit: cover;
@@ -48,7 +48,7 @@
     font-family: "Poppins-Regular";
     font-weight: 400;
     margin: 0 0 1.5rem 1.3rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
   .productDetails-ingredient-block {
     width: 16rem;
