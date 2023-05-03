@@ -17,6 +17,7 @@
   border-radius: 10px;
   min-height: 90vh; /* use min-height instead of height to allow the container to expand if necessary */
   width: 70vw;
+  padding: 40px;
 }
 
 /*------------ IMAGE------------ */
