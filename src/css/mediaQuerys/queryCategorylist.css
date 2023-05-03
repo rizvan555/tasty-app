@@ -1,0 +1,58 @@
+/* ------------------ MEDIA QUERYS ---------------------- */
+
+@media only screen and (max-width: 844px) {
+    
+    .head-presentation {
+        text-align: center;
+        width: 100vw;
+        font-size: 1rem;
+       }
+    
+      .categoryListContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-column-gap: auto;
+        grid-row-gap: 10px;
+        width: 100vw;    
+        margin: 25px 30px auto 30px;
+       
+      }
+      
+      .categoryList {
+        width: 40vw;
+        height: 20vh;
+
+      }
+      .categoryList:hover,
+      .categoryList:focus,
+      .categoryList:active {
+        box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+      }
+      .categoryList h2 {
+       font-size: 1.3rem;
+      }
+      .categoryList img {
+        width: 40vw;
+      
+        margin-top: 5px;
+        align-items: center;
+        cursor: pointer;
+      }
+      .categoryList a {
+        font-size: 1.3rem;
+       
+      }
+      .cagetoryList-random {
+        width: 35vw;
+        height: 20vh;
+        border: 1px solid #e3e3e3;
+        background-color: #d6dfc9;
+      }
+      
+      .random_headline{
+        font-size: 1.3rem;
+      }
+    }

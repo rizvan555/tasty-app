@@ -5,6 +5,7 @@ import "../css/categoryList.css";
 import clickSound from "../sounds/mouse-click.wav";
 import Footer from "../components/Footer";
 import CustomizedSwitches from "../components/MaterialUISwitch";
+import '../css/mediaQuerys/queryCategorylist.css';
 
 function CategoryList({light}) {
   const [categories, setCategories] = useState([]);
