@@ -15,7 +15,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     transform: "translateX(3px)",
     "&.Mui-checked": {
       color: "#fff",
-      transform: "translateX(38px)",
+      transform: "translateX(41px)",
       "& .MuiSwitch-thumb:before": {
         backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
           "#fff"
@@ -29,8 +29,8 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
   "& .MuiSwitch-thumb": {
     backgroundColor: theme.palette.mode === "dark" ? "#003892" : "#001e3c",
-    width: 35,
-    height: 35,
+    width: 33,
+    height: 33,
     "&:before": {
       content: "''",
       position: "absolute",

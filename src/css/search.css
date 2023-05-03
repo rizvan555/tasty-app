@@ -27,6 +27,7 @@ div .head-presentation {
   flex-direction: column;
   gap: 10px;
 }
+
 .search-container input {
   width: 50vw;
   height: 10vh;
@@ -59,9 +60,9 @@ div .head-presentation {
   text-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-/* .search-box {
+.search-box {
   position: relative;
-} */
+}
 
 .search-box input[type="text"] {
   padding-right: 30px;
@@ -69,8 +70,8 @@ div .head-presentation {
 
 .close-icon {
   position: absolute;
-  top: 57vh;
-  left: 53vw;
+  top: 8vh;
+  left: 46vw;
   transform: translateY(-50%);
 }
 
