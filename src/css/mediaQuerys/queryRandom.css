@@ -1,0 +1,63 @@
+
+
+@media only screen and (device-width: 390px) and (device-height: 844px){
+
+.container_box {
+    margin: 1vh auto;
+    background: #96c0b7;
+    border-radius: 10px;
+    min-height: 50vh;
+    width: 80vw;
+  }
+  
+  /*------------ IMAGE------------ */
+  .container_box img {
+    width: 50vw;
+    height: 20vh;
+  }
+  /* --------- all Texts --------- */
+  .all_texts {
+    display: flex;
+    justify-content: space-between;
+    margin: 2vh auto;
+    width: 65vw;
+  }
+  /* --------- Container left: description ----------- */
+  .container_left {
+    display: flex;
+    flex-direction: column;
+    width: 48vw;
+    text-align: left;
+  }
+  
+  .container_left h2 {
+    font-size: 1rem;
+   
+  }
+    .container_left li {
+    font-weight: 400;
+    margin: 0 0 0 0;
+  }
+
+  /* --------- Container right: Measure & Ingredients ----------- */
+  .container_right {
+    width: 25%;
+  }
+  
+  .container_right h3 {
+    font-size: 1rem;
+  }
+  
+  .container_right p {
+    font-size: 1rem;
+    text-decoration: none;
+    margin-bottom: 1vh;
+    font-weight: 300;
+  }
+  /* --------------- button -------------------  */
+  .button_video {
+    font-size: 1rem;
+    padding: 1rem 1rem;
+    margin: 2vh 1vh 1vh 0;
+}
+}

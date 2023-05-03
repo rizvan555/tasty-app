@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../css/random.css";
+import '../css/mediaQuerys/queryRandom.css';
 import Search from "./Search";
 
 const Random = () => {
