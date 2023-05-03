@@ -3,6 +3,12 @@
   justify-content: center;
   gap: 2vw;
   padding: 30px;
+  border-top: 1px solid #e3e3e3;
+  background-color: #e9e9e9;
+  cursor: pointer;
+}
+.footer-container a {
+  cursor: pointer;
 }
 .hvr-grow-shadow {
   display: flex;
@@ -21,6 +27,7 @@
   height: 40px;
   color: #fff;
   padding: 9px;
+  cursor: pointer;
 }
 .hvr-grow-shadow:hover,
 .hvr-grow-shadow:focus,
@@ -28,5 +35,5 @@
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
+  cursor: pointer;
 }
-

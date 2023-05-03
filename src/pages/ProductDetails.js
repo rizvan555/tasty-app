@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../css/productDetails.css";
 import Search from "../components/Search";
-
+import Footer from "../components/Footer";
 
 const ProductDetails = () => {
   const [details, setDetails] = useState([]);
@@ -92,6 +92,7 @@ const ProductDetails = () => {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   );
 };

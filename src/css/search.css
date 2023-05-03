@@ -41,7 +41,7 @@ div .head-presentation {
   width: 45vw;
   height: 8vh;
   border-radius: 10px;
-  border: 1px solid #e9e9e9;
+  border: 1px solid #e3e3e3;
   margin: 2rem 0 5vh 0;
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
@@ -53,6 +53,7 @@ div .head-presentation {
   font-size: 1.3rem;
   color: #96c0b7;
   font-family: "Poppins-Light";
+  font-weight: 500;
 }
 
 .search-container input:focus {

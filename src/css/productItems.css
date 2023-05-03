@@ -6,23 +6,28 @@
   padding: 20px 10px;
   border: 1px solid #e3e3e3;
   margin-top: 5vh;
+  cursor: pointer;
 }
 .product-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .product-item .image {
   width: 24vw;
   height: 35vh;
   border-radius: 10px;
+  cursor: pointer;
 }
 .product-item h2 {
   color: #fff;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 a {
   font-weight: bold;
   text-decoration: none;
+  cursor: pointer;
 }

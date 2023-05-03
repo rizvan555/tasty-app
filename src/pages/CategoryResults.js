@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Search from "../components/Search";
 import clickSound from "../sounds/mouse-click.wav";
-import '../css/categoryResult.css'
-import '../css/mediaQuerys/queryResult.css'
-
+import "../css/categoryResult.css";
+import "../css/mediaQuerys/queryResult.css";
+import Footer from "../components/Footer";
 
 function CategoryResults() {
   const { idCategory } = useParams();
@@ -34,31 +34,31 @@ function CategoryResults() {
       {showResult && (
         <div className="container_result">
           {meals.map((meal, index) => {
-            
             return (
               <div
-              style={
-                index % 2 === 0
-                  ? { backgroundColor: "#a0bfb7" }
-                  : { backgroundColor: "#d6dfc9" }
-              }
+                style={
+                  index % 2 === 0
+                    ? { backgroundColor: "#a0bfb7" }
+                    : { backgroundColor: "#d6dfc9" }
+                }
                 className="container_item"
                 key={meal.idMeal}
-                onClick={handleClick}>
-                
+                onClick={handleClick}
+              >
                 <Link to={`/categoryResults/${meal.idMeal}`}>
                   <p>{meal.strMeal}</p>
-                    <img 
-                      className="container_img"
-                      src={meal.strMealThumb}
-                      alt="image"
-                    />
+                  <img
+                    className="container_img"
+                    src={meal.strMealThumb}
+                    alt="image"
+                  />
                 </Link>
               </div>
             );
           })}
         </div>
       )}
+      <Footer />
     </div>
   );
 }
