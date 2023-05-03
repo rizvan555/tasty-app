@@ -9,7 +9,7 @@ import "../css/mediaQuerys/querySwitch.css";
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 82,
   height: 35,
-  padding: 8,
+  padding: 5,
   "& .MuiSwitch-switchBase": {
     margin: 1,
     padding: 0,
@@ -57,7 +57,16 @@ export default function CustomizedSwitches({ light, setLight }) {
   return (
     <FormGroup>
       <FormControlLabel
-        control={<MaterialUISwitch sx={{ ml: 165, mt: 2 }} defaultChecked  />}
+        control={
+          <MaterialUISwitch
+            sx={{
+              mt: 2,
+              width: { xs: 80, sm: 100, md: 30, lg: 40, xl: 50 },
+              ml: { xs: 37, sm: 57, md: 77, lg: 97, xl: 107 },
+            }}
+            defaultChecked
+          />
+        }
         onClick={() => setLight(!light)}
       />
       <Stack direction="row" spacing={1} alignItems="center"></Stack>
