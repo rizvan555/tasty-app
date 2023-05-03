@@ -1,7 +1,14 @@
 .search_firstParentContainer {
-  width: 90vw;
+  width: 95vw;
   padding: 10px;
   margin: 0 auto;
+}
+
+.logo {
+  width: 15vw;
+  margin: 5vh auto;
+  text-align: center;
+  cursor: pointer;
 }
 
 .big-container {
@@ -15,40 +22,42 @@ div .head-presentation {
   margin-bottom: 2rem;
 }
 
-.logo {
-  width: 15vw;
-  margin: 5vh auto;
-  text-align: center;
+.big-container .headline-searchbar{
+  font-size: 2.6rem;
+  margin: 3vh 0 0 0;
 }
+
 .search-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 10px;
+  cursor: pointer;
 }
 
 .search-container input {
-  width: 50vw;
-  height: 10vh;
+  font-size: 1.3rem;
+  width: 45vw;
+  height: 8vh;
   border-radius: 10px;
   border: 1px solid #e9e9e9;
-  margin-top: 25px;
-  margin-right: 35vw;
+  margin: 2rem 0 5vh 0;
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  cursor: pointer;
+  color: #868e87;
 }
 
 .search-container input::placeholder {
-  font-size: 18px;
+  font-size: 1.3rem;
   color: #96c0b7;
   font-family: "Poppins-Light";
 }
 
-.search-container button {
-  border: none;
-  background-color: transparent;
-  padding-top: 25px;
+.search-container input:focus {
+  color: #868e87;
+  font-size: 1.3rem;
 }
 
 .headline-searchbar {
@@ -62,6 +71,7 @@ div .head-presentation {
 
 .search-box {
   position: relative;
+  cursor: pointer;
 }
 
 .search-box input[type="text"] {
@@ -71,7 +81,8 @@ div .head-presentation {
 .close-icon {
   position: absolute;
   top: 8vh;
-  left: 46vw;
+  left: 41vw;
+  cursor: pointer;
   transform: translateY(-50%);
 }
 
@@ -82,3 +93,9 @@ div .head-presentation {
   margin: 0 auto;
   text-decoration: none;
 }
+
+
+
+
+
+

@@ -6,7 +6,7 @@ import clickSound from "../sounds/mouse-click.wav";
 import Footer from "../components/Footer";
 import CustomizedSwitches from "../components/MaterialUISwitch";
 
-function CategoryList() {
+function CategoryList({light}) {
   const [categories, setCategories] = useState([]);
   const [showCategories, setShowCategories] = useState(true);
   useEffect(() => {
@@ -25,6 +25,7 @@ function CategoryList() {
   return (
     <div>
       <Search
+        light={light}
         setShowCategories={setShowCategories}
         setShowResult={() => {}}
         setShowDetails={() => {}}
@@ -58,7 +59,7 @@ function CategoryList() {
               className="cagetoryList-random"
               onClick={handleClick}
             >
-              <h2>Random</h2>
+              <h2 className="random_headline">Random</h2>
             </Link>
           </div>
         </>
