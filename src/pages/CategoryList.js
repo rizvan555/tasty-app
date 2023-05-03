@@ -4,6 +4,7 @@ import Search from "../components/Search";
 import "../css/categoryList.css";
 import clickSound from "../sounds/mouse-click.wav";
 import Footer from "../components/Footer";
+import '../css/mediaQuerys/queryCategorylist.css';
 
 function CategoryList({ light }) {
   const [categories, setCategories] = useState([]);
