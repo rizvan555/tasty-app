@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import "../css/productDetails.css";
 import Search from "../components/Search";
 import Footer from "../components/Footer";
+import "../css/mediaQuerys/queryDetails.css";
 
 const ProductDetails = () => {
   const [details, setDetails] = useState([]);
