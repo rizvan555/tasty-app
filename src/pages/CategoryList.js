@@ -4,10 +4,13 @@ import Search from "../components/Search";
 import "../css/categoryList.css";
 import clickSound from "../sounds/mouse-click.wav";
 import Footer from "../components/Footer";
+<<<<<<< HEAD
 import CustomizedSwitches from "../components/MaterialUISwitch";
 import '../css/mediaQuerys/queryCategorylist.css';
+=======
+>>>>>>> 0186fe422f63e51bc7fb3d957ed079234520992c
 
-function CategoryList({light}) {
+function CategoryList({ light }) {
   const [categories, setCategories] = useState([]);
   const [showCategories, setShowCategories] = useState(true);
   useEffect(() => {
@@ -47,7 +50,9 @@ function CategoryList({light}) {
                     }
                     onClick={handleClick}
                   >
-                    <Link to={`/categoryList/${category.strCategory}`}>
+                    <Link
+                      to={`/categoryList/${category.strCategory}`}
+                    >
                       <h2>{category.strCategory}</h2>
                       <img src={category.strCategoryThumb} alt="category" />
                     </Link>
