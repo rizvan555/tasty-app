@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../css/random.css";
 import Search from "./Search";
+import Footer from "./Footer";
 
 const Random = () => {
   const [meal, setMeal] = useState(null);
@@ -89,6 +90,7 @@ const Random = () => {
           )}
         </div>
       )}
+      <Footer />
     </div>
   );
 };

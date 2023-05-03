@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import ProductItems from "../pages/ProductItems";
-import { IoIosCloseCircleOutline } from "react-icons/io";
+import { AiFillCloseCircle } from "react-icons/ai";
 import Logo from "../resource/Nav.png";
 import { Link } from "react-router-dom";
 import "../css/search.css";
 import clickSound from "../sounds/mouse-click.wav";
-import "../css/mediaQuerys/querySearch.css"
+import "../css/mediaQuerys/querySearch.css";
 
 const Search = ({
-  light,
   setShowCategories,
   setShowResult,
   setShowDetails,
@@ -74,15 +73,18 @@ const Search = ({
               }}
               value={search}
               onClick={handleClick}
-              style={{ backgroundColor: darkLight ? "#d6dfc9" : "#d4dfc780" }}
+              style={{
+                backgroundColor: darkLight
+                  ? "rgba(212, 223, 199, 0.5)"
+                  : "#e9e9e9",
+              }}
             />
-            
-              <IoIosCloseCircleOutline
-                className="close-icon"
-                size={30}
-                onClick={reloadPage}
-              />
-            
+
+            <AiFillCloseCircle
+              className="close-icon"
+              size={30}
+              onClick={reloadPage}
+            />
           </section>
 
           <section className="result-container">
