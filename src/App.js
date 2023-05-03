@@ -13,7 +13,7 @@ function App() {
   const [light, setLight] = useState(true);
 
   return (
-    <div className="App" style={{ backgroundColor: light ? "white" : "black" }}>
+    <div className="App" style={{ backgroundColor: light ? "#fff" : "#000" }}>
       <CustomizedSwitches light={light} setLight={setLight} />
       <Routes>
         <Route path="/" element={<CategoryList light={light} />} />

@@ -1,94 +1,94 @@
-
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    color: white;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: white;
 }
 
 /* ------- GENERALS --------- */
 
-.container_box{
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    margin: 1vh auto;
-    background: #96C0B7;
-    border-radius: 10px;
-    min-height: 90vh; /* use min-height instead of height to allow the container to expand if necessary */
-    width: 70vw;
+.container_box {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1vh auto;
+  background: #96c0b7;
+  border-radius: 10px;
+  min-height: 90vh; /* use min-height instead of height to allow the container to expand if necessary */
+  width: 70vw;
 }
 
 /*------------ IMAGE------------ */
-.container_box img{
-    width: 65vw;
-    height: 47vh;
-    margin: 2vh 0 1vh 0;
-    /* clip: rect(10% 20% 10% 5%); */
-    object-fit: cover;
-    -webkit-box-shadow: -0.5px 0.8px 24px -2px #fafafa;
-    box-shadow: -1px 2px 24px -3px #fafafa;
+.container_box img {
+  width: 65vw;
+  height: 47vh;
+  margin: 2vh 0 1vh 0;
+  /* clip: rect(10% 20% 10% 5%); */
+  object-fit: cover;
+  -webkit-box-shadow: -0.5px 0.8px 24px -2px #fafafa;
+  box-shadow: -1px 2px 24px -3px #fafafa;
 }
 /* --------- all Texts --------- */
-.all_texts{
-    display: flex;
-    justify-content: space-between;
-    margin: 2vh auto; 
-    width: 65vw;
+.all_texts {
+  display: flex;
+  justify-content: space-between;
+  margin: 2vh auto;
+  width: 65vw;
 }
 /* --------- Container left: description ----------- */
-.container_left{
-    display: flex;
-    flex-direction: column;
-    width: 48vw;
-    text-align: left;
+.container_left {
+  display: flex;
+  flex-direction: column;
+  width: 48vw;
+  text-align: left;
 }
 
-.container_left h2{
-    font-family: "Poppins-Regular";
-    font-size: 1.8rem;
-    margin: 0 0 2vh 0;
+.container_left h2 {
+  font-family: "Poppins-Regular";
+  font-size: 1.8rem;
+  margin: 0 0 2vh 0;
 }
 
 .container_left ul {
-    padding: 0; 
+  padding: 0;
 }
 
-.container_left li{
-    font-family: "Poppins-Regular";
-    font-weight: 400;
-    margin: 0 0 1.5rem 1.3rem;
+.container_left li {
+  font-family: "Poppins-Regular";
+  font-weight: 400;
+  margin: 0 0 1.5rem 1.3rem;
 }
 /* --------- Container right: Measure & Ingredients ----------- */
-.container_right{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    width: 21%;
+.container_right {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 21%;
 }
 
-.container_right h3{
-    font-size: 1.5rem;
-    margin: 0 0 2vh 0;
+.container_right h3 {
+  font-size: 1.5rem;
+  margin: 0 0 2vh 0;
 }
 
-.container_right p{
-    text-decoration: none;
-    margin-bottom: 1.5vh;
-    font-weight: 500;
+.container_right p {
+  text-decoration: none;
+  margin-bottom: 1.5vh;
+  font-weight: 500;
 }
 /* --------------- button -------------------  */
-.button_video{
-    font-family: "Roboto-button";
-    font-size: 1.1rem;
-    background-color: white;
-    color:#96C0B7;
-    padding: 0.8rem 2rem;
-    margin: 1vh 0 0 0;
-    border:none; 
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: 900;
-    display: inline-flex;
+.button_video {
+  font-family: "Roboto-button";
+  font-size: 1.1rem;
+  background-color: white;
+  color: #96c0b7;
+  padding: 0.8rem 2rem;
+  margin: 1vh 0 0 0;
+  border: none;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 900;
+  display: inline-flex;
+  cursor: pointer;
 }
