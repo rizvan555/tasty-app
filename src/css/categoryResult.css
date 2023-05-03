@@ -9,14 +9,14 @@
 .container_result{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 85vw;
+    width: 95vw;
     margin: 10px auto;
     gap: 2.5rem 1rem;
     cursor: pointer;
 }
 /* ----- each Item ------ */
 .container_item{
-    width: 26vw;
+    width: 29vw;
     height: 43vh;
     border: 1px solid #e3e3e3;
     border-radius: 8px;
