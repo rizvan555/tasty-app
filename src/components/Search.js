@@ -5,6 +5,7 @@ import Logo from "../resource/Nav.png";
 import { Link } from "react-router-dom";
 import "../css/search.css";
 import clickSound from "../sounds/mouse-click.wav";
+import "../css/mediaQuerys/querySearch.css"
 
 const Search = ({
   light,
@@ -16,6 +17,7 @@ const Search = ({
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);
+  const [darkLight, setDarkLight] = useState(true);
 
   useEffect(() => {
     fetch("https://www.themealdb.com/api/json/v1/1/search.php?s")
@@ -72,15 +74,15 @@ const Search = ({
               }}
               value={search}
               onClick={handleClick}
-              style={{ backgroundColor: light ? "#d4dfc780" : "#d6dfc9" }}
+              style={{ backgroundColor: darkLight ? "#d6dfc9" : "#d4dfc780" }}
             />
-            <button>
+            
               <IoIosCloseCircleOutline
                 className="close-icon"
                 size={30}
                 onClick={reloadPage}
               />
-            </button>
+            
           </section>
 
           <section className="result-container">

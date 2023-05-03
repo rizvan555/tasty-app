@@ -10,10 +10,12 @@
 .categoryListContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 95vw;
+  width: 93vw;
   margin: 10px auto;
-  gap: 2.5rem 1rem;
+  gap: 2.5rem 0.5rem;
+  cursor: pointer;
 }
+
 .categoryList {
   display: flex;
   justify-content: center;
@@ -31,6 +33,7 @@
   -webkit-transition-property: box-shadow, transform;
   transition-property: box-shadow, transform;
   color: #fff;
+  cursor: pointer;
 }
 .categoryList:hover,
 .categoryList:focus,
@@ -40,11 +43,15 @@
   transform: scale(1.05);
 }
 .categoryList h2 {
+  cursor: pointer;
   text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  font-size: 3rem;
 }
 .categoryList img {
   width: 25vw;
   margin-top: 30px;
+  align-items: center;
+  cursor: pointer;
 }
 .categoryList a {
   color: #fff;
@@ -52,12 +59,13 @@
   text-decoration: none;
   border-radius: 10px;
   padding: 5px;
+  cursor: pointer;
 }
 .cagetoryList-random {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30vw;
+  width: 27vw;
   height: 55vh;
   border: 1px solid #e3e3e3;
   background-color: #d6dfc9;
@@ -66,4 +74,8 @@
   color: #fff;
   font-size: 15px;
   text-decoration: none;
+}
+
+.random_headline{
+  font-size: 3rem;
 }

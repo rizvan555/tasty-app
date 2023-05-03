@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import Search from "../components/Search";
 import clickSound from "../sounds/mouse-click.wav";
 import '../css/categoryResult.css'
+import '../css/mediaQuerys/queryResult.css'
 
 
 function CategoryResults() {

@@ -1,0 +1,45 @@
+/* ------------------ MEDIA QUERYS ---------------------- */
+
+@media only screen and (max-width: 768px) {
+    .container_result {
+    grid-template-columns: repeat(2, 1fr);
+    width: 80vw;
+    }
+
+    .container_item {
+    width: 40vw;
+    height: 50vh;
+    }
+
+    .container_item p {
+    width: 30vw;
+    }
+
+    .container_item .container_img {
+    width: 35vw;
+    height: 25vh;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .container_result {
+    grid-template-columns: repeat(1, 1fr);
+    width: 70vw;
+    }
+
+    .container_item {
+    width: 60vw;
+    height: 40vh;
+    }
+
+
+    .container_item p {
+    width: 50vw;
+    }
+
+    .container_item .container_img {
+    width: 55vw;
+    height: 20vh;
+    }
+}
