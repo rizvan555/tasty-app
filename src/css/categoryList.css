@@ -12,7 +12,7 @@
   grid-template-columns: repeat(3, 1fr);
   width: 95vw;
   margin: 10px auto;
-  gap: 20px;
+  gap: 2.5rem 1rem;
 }
 .categoryList {
   display: flex;

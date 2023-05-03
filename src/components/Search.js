@@ -35,14 +35,7 @@ const Search = ({
       });
       setFiltered(filteredProducts);
     }
-  }, [
-    search,
-    products,
-    setShowCategories,
-    setShowResult,
-    setShowDetails,
-    setShowRandom,
-  ]);
+  }, [search,products]);
 
   const reloadPage = () => {
     window.location.reload();
