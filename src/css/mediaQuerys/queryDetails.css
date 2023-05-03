@@ -13,6 +13,8 @@
   .product-detailsImg {
     width: 70vw;
     height: 20vh;
+  }
+  
     margin: 2vh 0 1vh 0;
     object-fit: cover;
     -webkit-box-shadow: -0.5px 0.8px 24px -2px #fafafa;
@@ -48,7 +50,7 @@
     font-family: "Poppins-Regular";
     font-weight: 400;
     margin: 0 0 1.5rem 1.3rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
   .productDetails-ingredient-block {
     width: 16rem;
