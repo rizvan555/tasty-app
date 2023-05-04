@@ -4,7 +4,8 @@ import Search from "../components/Search";
 import "../css/categoryList.css";
 import clickSound from "../sounds/mouse-click.wav";
 import Footer from "../components/Footer";
-import '../css/mediaQuerys/queryCategorylist.css';
+import "../css/mediaQuerys/queryCategorylist.css";
+import "animate.css";
 
 function CategoryList({ light }) {
   const [categories, setCategories] = useState([]);
@@ -46,9 +47,7 @@ function CategoryList({ light }) {
                     }
                     onClick={handleClick}
                   >
-                    <Link
-                      to={`/categoryList/${category.strCategory}`}
-                    >
+                    <Link to={`/categoryList/${category.strCategory}`}>
                       <h2>{category.strCategory}</h2>
                       <img src={category.strCategoryThumb} alt="category" />
                     </Link>

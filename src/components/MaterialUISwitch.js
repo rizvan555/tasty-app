@@ -61,7 +61,7 @@ export default function CustomizedSwitches({ light, setLight }) {
             sx={{
               mt: 2,
               width: { xs: 75, sm: 75, md: 75, lg: 80, xl: 80 },
-              ml: { xs: 34, sm: 57, md: 57, lg: 167, xl: 187 },
+              ml: { xs: 34, sm: 57, md: 57, lg: 167, xl: 237 },
             }}
             defaultChecked
           />

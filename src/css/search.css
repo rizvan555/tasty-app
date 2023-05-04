@@ -22,7 +22,7 @@ div .head-presentation {
   margin-bottom: 2rem;
 }
 
-.big-container .headline-searchbar{
+.big-container .headline-searchbar {
   font-size: 2.6rem;
   margin: 3vh 0 0 0;
 }
@@ -41,12 +41,16 @@ div .head-presentation {
   width: 45vw;
   height: 8vh;
   border-radius: 10px;
-  border: 1px solid #e3e3e3;
+  border: none;
   margin: 2rem 0 5vh 0;
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   cursor: pointer;
   color: #868e87;
+  outline: none;
+}
+.search-container input:focus {
+  outline: 2px solid gray;
 }
 
 .search-container input::placeholder {
@@ -94,9 +98,3 @@ div .head-presentation {
   margin: 0 auto;
   text-decoration: none;
 }
-
-
-
-
-
-
